@@ -5,7 +5,7 @@ This is official Pytorch implementation of "KDFuse: A High-Level Vision Task-dri
 The overall framework of the proposed KDFuse.
 ![image](https://github.com/Chenjia-Yang/KDFuse/blob/main/image/framework.png)
 
-#To Train
+# To Train
 1.Download the checkpoint from [seg_model](https://pan.baidu.com/s/1J_XiTRoZbSJ38Qxw2hVrYg?pwd=1wfb) and put it into `'./pretrained/'`.
 2.run 'train.py'
 
