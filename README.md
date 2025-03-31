@@ -1,13 +1,17 @@
 # KDFuse
-This is official Pytorch implementation of "KDFuse: A High-Level Vision Task-driven Infrared and Visible Image Fusion Method Based on Cross-Domain Knowledge Distillation".  We have optimized the code, and the latest version along with the results are as follows:
+This is official Pytorch implementation of "KDFuse: A High-Level Vision Task-driven Infrared and Visible Image Fusion Method Based on Cross-Domain Knowledge Distillation".  
+We have optimized the code, and the latest version along with the results are as follows:
 
 ![image](image/MSRS.png)  
 
 ![image](image/TNO.png)  
 
+
 ![image](image/FMB.png)  
 
+
 ![image](image/M3FD.png)  
+
 
 
 # Framework
