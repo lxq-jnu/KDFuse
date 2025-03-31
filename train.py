@@ -223,6 +223,6 @@ if __name__ == '__main__':
             st = ed
         Loss_list.append(total_loss_epoch / (it + 1))
 
-        if (epoch + 1) % 5 == 0:
+        if (epoch + 1) % 30 == 0:
                 torch.save(fusionmodel.state_dict(), f'{opt.modelpth}/fusion_model_SIM_epoch_{epoch + 1}.pth')
                 logger1.info("Fusion Model Save to: {}".format(f'{opt.modelpth}/fusion_model_SIM_epoch_{epoch + 1}.pth'))
