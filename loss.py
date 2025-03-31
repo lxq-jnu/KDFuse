@@ -59,8 +59,6 @@ class Fusionloss(nn.Module):
         fft_loss = self.l1loss(torch.fft.fft2(generate_img, dim=(-2, -1)), torch.fft.fft2(image_vis, dim=(-2, -1)))
         loss_total = 5*loss_in + 10*loss_grad + 0.2*fft_loss
 
-        # loss_total = loss_in + 10*loss_grad + 0.1*fft_loss
-
         return loss_total,loss_in,loss_grad
 
 
