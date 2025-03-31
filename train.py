@@ -1,6 +1,4 @@
 import os
-
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
  
 import argparse
 import torch
@@ -26,7 +24,6 @@ def setup_seed(seed):
      np.random.seed(seed)
      random.seed(seed)
      torch.backends.cudnn.deterministic = True
-# 设置随机数种子
 setup_seed(20)
 
 
@@ -84,7 +81,7 @@ def parse_option():
     parser.add_argument('--num_workers', type=int, default=4, help='num of workers to use')
     parser.add_argument('--epochs', type=int, default=30, help='number of training epochs')
     parser.add_argument('--lr_start', type=float, default=0.001, help='learning rate')
-    parser.add_argument('--modelpth', type=str, default='./model/KDFuse5102_dloss5', help='saving model path')
+    parser.add_argument('--modelpth', type=str, default='./models', help='saving model path')
     parser.add_argument('--logpath', type=str, default='./logs', help='log path')
  
     opt = parser.parse_args()
@@ -99,7 +96,7 @@ def parse_option():
 
 if __name__ == '__main__':
     opt = parse_option()
-    Loss_list = []  # 存储每次epoch损失值
+    Loss_list = [] 
 
     logger1 = logging.getLogger()
     # setup_logger(opt.logpath)
@@ -190,7 +187,6 @@ if __name__ == '__main__':
 
 
             loss_total = loss_fusion + 0.5 * total_dloss
-            # loss_total = loss_fusion + total_dloss
             total_loss_epoch += loss_total.item()
 
             loss_total.backward()
@@ -230,10 +226,3 @@ if __name__ == '__main__':
         if (epoch + 1) % 5 == 0:
                 torch.save(fusionmodel.state_dict(), f'{opt.modelpth}/fusion_model_SIM_epoch_{epoch + 1}.pth')
                 logger1.info("Fusion Model Save to: {}".format(f'{opt.modelpth}/fusion_model_SIM_epoch_{epoch + 1}.pth'))
-
-    plt.figure(figsize=[12, 8])
-    x = opt.epochs
-    plt.plot(Loss_list), plt.title('model_loss')
-
-    plt.tight_layout()
-    plt.savefig(os.path.join('./logs', 'loss_per_epoch.png'))
