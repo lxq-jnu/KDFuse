@@ -5,7 +5,7 @@ We have optimized the code, and the latest version along with the results are as
 
 # Framework
 The overall framework of the proposed KDFuse.
-![image](https://github.com/Chenjia-Yang/KDFuse/blob/main/image/framework.png)
+![image](image/framework.png)
 
 # To Train
 1. Download the checkpoint from [seg_model](https://pan.baidu.com/s/1J_XiTRoZbSJ38Qxw2hVrYg?pwd=1wfb) and put it into `'./pretrained/'`.
