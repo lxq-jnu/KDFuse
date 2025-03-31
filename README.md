@@ -6,9 +6,7 @@ We have optimized the code, and the latest version along with the results are as
 
 ![image](image/TNO.png)  
 
-
 ![image](image/FMB.png)  
-
 
 ![image](image/M3FD.png)  
 
